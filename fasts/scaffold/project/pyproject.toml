@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "{{ name }}"
+version = "0.1.0"
+description = "Projeto criado com o framework 3fast"
+authors = ["Seu Nome <seu@email.com>"]
+readme = "README.md"
+packages = [{ include = "apps" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+3fast = { path = "../../..", develop = true }
+
+[tool.poetry.scripts]
+run = "3fast:main"
+
+[tool.taskipy.tasks]
+dev = "3fast run"
