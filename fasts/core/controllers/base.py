@@ -1,5 +1,5 @@
 from typing import Type
-# from fasts.core.fastcss import load_css
+# from fasts.core.fastcss.css import load_css
 
 
 class BaseController:

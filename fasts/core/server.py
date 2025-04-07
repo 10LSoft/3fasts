@@ -4,7 +4,7 @@ import uvicorn
 from fastapi import FastAPI
 from starlette.staticfiles import StaticFiles
 
-from fasts.core.fastcss import load_css
+from fasts.core.fastcss.css import load_css
 from fasts.core.settings import get_server_config
 
 

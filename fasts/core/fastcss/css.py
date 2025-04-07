@@ -1,5 +1,33 @@
 from pathlib import Path
 
+from fasts.utils import to_kebab_case
+
+
+class CSSBuilder:
+    def __init__(self):
+        self.rules = []
+
+    def add(self, selector: str, **styles):
+        css_rule = {
+            "selector": selector,
+            "properties": {
+                to_kebab_case(k): v for k, v in styles.items()
+            }
+        }
+        self.rules.append(css_rule)
+
+    def render(self) -> str:
+        output = ""
+        for rule in self.rules:
+            props = "\n  ".join(
+                f"{k}: {v};" for k, v in rule["properties"].items()
+            )
+            output += f"{rule['selector']} {{\n  {props}\n}}\n\n"
+        return output.strip()
+
+
+css = CSSBuilder()
+
 
 def load_css(mode: str = "dev"):
     """
