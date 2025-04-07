@@ -4,10 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["Genese Lessa <genese.lessa@gmail.com>"]
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
 
 [tool.poetry.dependencies]
-python = "3.11.*"
+python = "3.12.*"
 typer = "^0.15.2"
 fastapi = "^0.115.12"
 python-fasthtml = "^0.12.12"
